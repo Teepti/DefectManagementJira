@@ -93,6 +93,8 @@ public class WebDriverService {
 		default:
 			driver = new FirefoxDriver(); 
 		}
+		driver.manage().window().maximize();
+		
 		return driver;
 	}	
 }

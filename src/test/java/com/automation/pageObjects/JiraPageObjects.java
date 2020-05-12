@@ -13,6 +13,7 @@ public class JiraPageObjects {
 	        this.driver = driver;
 	    }
 
+	/******* LoginPage Objects Starts **********************************/
 	    @FindBy(id="username")
 	    WebElement userName;
 	    
@@ -35,7 +36,30 @@ public class JiraPageObjects {
 	    	usernameSubmitButton.click();
 	    }
 	    public void clickloginButton() {
-	    	loginButton.sendKeys();
+	    	loginButton.click();
 	    }
 	    
+	    /******* LoginPage Objects Ends **********************************/
+	    
+	    /******* HomePage Objects Starts **********************************/
+	    @FindBy(xpath="//h5[text()='Genpact']")
+	    WebElement genpactWorkSpace;
+	    
+	    @FindBy(xpath="//span[contains(text(),'Advanced search')]")
+	    WebElement advancedSearchButton;
+	    
+	    @FindBy(xpath="//*[@id=\"pin-filter-allissues\"]/div/div")
+	    WebElement allIssuesTab;
+
+	    public void clickGenpactWorkSpace() {
+	    	genpactWorkSpace.click();
+	    }
+	    public void clickAllIssues() {
+	    	allIssuesTab.click();
+	    }
+	    public void clickAdvancedSearch() {
+	    	advancedSearchButton.click();
+	    }
+	    
+	    /******* HomePage Objects Ends **********************************/
 }
