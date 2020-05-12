@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-	<suite name="RegressionTest in Parallel" parallel="tests"  thread-count="1">
+	<suite name="RegressionTest">
 	<test name="SmokeSuite">
 	
 		<classes>
-			<class name="com.cvs.runner.TestSuiteRunner"></class>
+			<class name="com.automation.defMgmtUtility.DefMgmtUtilityJira"></class>
 		</classes>
 	</test>
 		

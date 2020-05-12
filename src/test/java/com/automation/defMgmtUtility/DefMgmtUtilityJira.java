@@ -1,5 +1,6 @@
 package com.automation.defMgmtUtility;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -8,8 +9,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
-import com.automation.excel.ExcelConnection;
+import com.automation.utils.ExcelConnection;
 import com.codoid.products.exception.FilloException;
 
 public class DefMgmtUtilityJira {
@@ -27,25 +29,16 @@ public class DefMgmtUtilityJira {
 //		configData = ExcelConnection.getConfigData();
 //	}
 	
-	
-	public static void main(String[] args) throws InterruptedException, FilloException {
+	@Test
+	public static void main(String[] args) throws Throwable {
 
 		metaData = ExcelConnection.getAssigneeList();
 		Data = ExcelConnection.getexcelData();
 		configData = ExcelConnection.getConfigData();
-		if(configData.get(0).get("Browser").equals("Chrome")) {
-			System.setProperty("webdriver.chrome.driver","chromedriver.exe");
-			driver=new ChromeDriver();
-		}
-		 driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
-		 driver.manage().deleteAllCookies();
-		 String url = configData.get(0).get("URL");
-		 driver.get(url);
-		 driver.manage().window().maximize();
-		 driver.findElement(By.id("username")).sendKeys("ite.03garg@gmail.com");
-		driver.findElement(By.cssSelector("#login-submit > span > span > span")).click();
-		driver.findElement(By.id("password")).sendKeys("Test#15jan");
-		driver.findElement(By.cssSelector("#login-submit > span > span > span")).click();
+		System.out.println("Data : " + Data.get(0).get("Label"));
+		BaseRunner.loadConfig();
+		BaseRunner.navigateURL();
+		BaseRunner.login();
 		Thread.sleep(5000);
 
 //		List<String> Assignee=new ArrayList<>();
