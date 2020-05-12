@@ -1,0 +1,15 @@
+{
+	"JIRA": {
+		"URL": "https://www.google.com",
+		"Path_TestData": "D://prashant//New folder//CIOXBDDMavenTest//testData//",
+ 		"File_TestData": "TestData.xlsx",
+		"DBConfig": {
+			"vendor": "",
+			"hostName": "",
+			"portNumber": 1528,
+			"dbName": "",
+			"userName": "",
+			"password": ""
+		}
+	}
+}	
